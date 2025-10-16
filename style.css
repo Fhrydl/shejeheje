@@ -1,0 +1,286 @@
+/* General Styling */
+:root {
+    /* Palet Warna Baru Sesuai Logo */
+    --primary-red: #B91C1C;       /* Merah Tua untuk PI & Aksen Utama */
+    --primary-gold: #D97706;      /* Emas/Kuning Gelap untuk PA */
+    --neutral-gray: #4B5563;     /* Abu-abu netral */
+    --text-dark: #1F2937;         /* Teks Gelap */
+    --text-light: #6B7280;        /* Teks Terang */
+    --bg-light: #F9FAFB;         /* Latar Belakang Sangat Terang */
+    --bg-gradient: linear-gradient(45deg, #ffffff, #F3F4F6); /* Gradasi Latar Belakang Baru */
+    --font-display: 'Dancing Script', cursive;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--bg-gradient);
+    color: var(--text-dark);
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* ===== ANIMASI UMUM & KEYFRAMES ===== */
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideInDown { from { transform: translateY(-30px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+@keyframes popIn { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+@keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
+@keyframes slideInRight { from { opacity: 0; transform: translateX(-20px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes gradient-flow { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+
+/* Keyframes untuk Animasi Api (BARU) */
+@keyframes fire-animation {
+    0% {
+        background-position: 0% 50%;
+        box-shadow: 0 0 7px #ffcc33, 0 0 15px #ff6600, 0 0 20px #cc3300;
+        text-shadow: 0 0 3px rgba(255, 255, 255, 0.7);
+    }
+    50% {
+        background-position: 100% 50%;
+        box-shadow: 0 0 10px #ffcc33, 0 0 25px #ff6600, 0 0 35px #cc3300;
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.9);
+    }
+    100% {
+        background-position: 0% 50%;
+        box-shadow: 0 0 7px #ffcc33, 0 0 15px #ff6600, 0 0 20px #cc3300;
+        text-shadow: 0 0 3px rgba(255, 255, 255, 0.7);
+    }
+}
+
+
+/* ===== PRELOADER HALAMAN ===== */
+#preloader {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 9999;
+    background: var(--bg-light); display: flex; justify-content: center; align-items: center;
+    transition: opacity 0.8s ease, visibility 0.8s ease; visibility: visible; opacity: 1;
+}
+.preloader-logo { width: 100px; animation: pulse 1.5s ease-in-out infinite; }
+#preloader.hidden { opacity: 0; visibility: hidden; }
+
+/* ===== IKON MENU & NAVIGASI ===== */
+.menu-toggle {
+    position: fixed; top: 20px; left: 20px; z-index: 1500; width: 40px; height: 40px;
+    cursor: pointer; display: flex; flex-direction: column; justify-content: center;
+    align-items: center; background: rgba(255, 255, 255, 0.8); border-radius: 50%;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: transform 0.3s ease;
+}
+.menu-toggle:hover { transform: scale(1.1); }
+.bar { width: 22px; height: 2px; background-color: var(--text-dark); margin: 3px 0; transition: 0.4s; }
+.menu-toggle.active .bar:nth-child(1) { transform: rotate(-45deg) translate(-5px, 6px); }
+.menu-toggle.active .bar:nth-child(2) { opacity: 0; }
+.menu-toggle.active .bar:nth-child(3) { transform: rotate(45deg) translate(-5px, -6px); }
+
+.nav-menu {
+    position: fixed; top: 0; left: 0; width: 280px; height: 100%; background: #fff;
+    box-shadow: 5px 0 20px rgba(0,0,0,0.1); z-index: 1400; transform: translateX(-100%);
+    transition: transform 0.5s ease-in-out; padding-top: 100px;
+}
+.nav-menu.active { transform: translateX(0); }
+.nav-menu ul { list-style: none; }
+.nav-menu ul li { opacity: 0; transform: translateX(-20px); }
+.nav-menu.active ul li { animation: slideInRight 0.5s forwards ease-out; }
+.nav-menu.active ul li:nth-child(1) { animation-delay: 0.1s; }
+.nav-menu.active ul li:nth-child(2) { animation-delay: 0.2s; }
+.nav-menu ul li a { display: block; padding: 15px 30px; color: var(--text-dark); text-decoration: none; font-size: 1.1em; font-weight: 500; transition: background-color 0.3s, color 0.3s, transform 0.3s; }
+.nav-menu ul li a:hover { background-color: var(--bg-light); color: var(--primary-red); transform: translateX(5px); }
+
+/* ==== HEADER ==== */
+header {
+    display: flex; flex-direction: column; align-items: center; text-align: center;
+    margin-bottom: 40px; border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding-bottom: 20px; margin-top: 20px;
+}
+.scout-logo-header {
+    width: 80px; height: auto; margin-bottom: 15px; animation: slideInDown 0.8s ease-out;
+}
+.header-title h1, .header-title h2 { animation: slideInDown 0.8s ease-out; }
+.header-title h1 { animation-delay: 0.1s; }
+.header-title h2 { animation-delay: 0.2s; }
+header h1 {
+    font-size: 1.8em; line-height: 1.2; font-weight: 700;
+    background: linear-gradient(90deg, var(--primary-gold), var(--primary-red), var(--primary-gold));
+    background-size: 200% auto; -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent; animation: gradient-flow 8s ease-in-out infinite, slideInDown 0.8s ease-out;
+}
+header h2 { font-size: 1.1em; font-weight: 400; color: var(--text-light); margin-top: 5px; }
+
+/* ===== ANIMASI SCROLL ===== */
+.card, .member-card, .vision-mission {
+    opacity: 0; 
+    transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+}
+.card, .member-card, .vision-mission { transform: translateY(50px); }
+.visible { opacity: 1; transform: none; }
+
+/* ===== Vision & Mission ===== */
+.vision-mission {
+    text-align: center; margin-bottom: 50px; padding: 25px; background: rgba(255, 255, 255, 0.7); border-radius: 15px;
+}
+.vision-mission h3 { font-size: 1.5em; margin-bottom: 15px; padding-bottom: 5px; display: inline-block; }
+.vision h3 { border-bottom: 3px solid var(--primary-gold); }
+.mission h3 { border-bottom: 3px solid var(--primary-red); }
+.vision-mission p, .vision-mission ul { font-size: 1em; line-height: 1.7; text-align: left; }
+.vision-mission .mission { margin-top: 30px; }
+.vision-mission ul { list-style: none; }
+.vision-mission ul li { margin-bottom: 10px; position: relative; padding-left: 25px; }
+.vision-mission ul li::before { content: '✓'; color: var(--primary-red); font-weight: bold; position: absolute; left: 0; top: 0; }
+
+/* ===== Leadership Section ===== */
+.leadership { text-align: center; margin-bottom: 50px; }
+.leadership h3 { font-size: 1.5em; margin-bottom: 30px; display: inline-block; border-bottom: 3px solid var(--primary-red); padding-bottom: 10px; }
+.card-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+.card {
+    background: #fff; border-radius: 15px; padding: 20px; width: 100%; max-width: 220px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+.card img { width: 90px; height: 90px; border-radius: 50%; object-fit: cover; margin-bottom: 15px; border: 4px solid; }
+.card-pa img { border-color: var(--primary-gold); }
+.card-pi img { border-color: var(--primary-red); }
+.card-neutral img { border-color: var(--neutral-gray); }
+.card h4 { font-size: 1.1em; color: var(--text-dark); }
+.card .role { color: var(--primary-red); font-weight: 600; margin: 4px 0 10px 0; }
+.clickable { cursor: pointer; transition: transform 0.3s, box-shadow 0.3s; }
+.clickable:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.08); }
+
+/* ===== Main Content (Anggota) ===== */
+.main-content { display: flex; flex-direction: column; gap: 40px; }
+.penegak { width: 100%; }
+.penegak h3 { font-size: 1.5em; text-align: center; margin-bottom: 25px; padding-bottom: 10px; font-weight: 600; }
+.penegak-pa h3 { color: var(--primary-gold); border-bottom: 3px solid var(--primary-gold); }
+.penegak-pi h3 { color: var(--primary-red); border-bottom: 3px solid var(--primary-red); }
+.member-list { display: flex; flex-direction: column; gap: 15px; }
+.sub-heading { font-size: 1.1em; color: var(--neutral-gray); margin: 20px 0 10px 0; padding-bottom: 5px; border-bottom: 2px solid #f0f0f0; }
+.member-list .sub-heading:first-of-type { margin-top: 0; }
+.member-card {
+    background: #fff; border-radius: 12px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    padding: 15px; display: flex; align-items: center; gap: 15px; border-left: 5px solid;
+}
+.penegak-pa .member-card { border-left-color: var(--primary-gold); }
+.penegak-pi .member-card { border-left-color: var(--primary-red); }
+.member-card img { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; flex-shrink: 0; border: 3px solid; }
+.penegak-pa .member-card img { border-color: var(--primary-gold); }
+.penegak-pi .member-card img { border-color: var(--primary-red); }
+.member-card .info { flex-grow: 1; }
+.member-card .info h4 { font-size: 1em; color: var(--text-dark); font-weight: 600; }
+.member-card .info .role { margin: 2px 0 0 0; font-weight: 500; font-size: 0.9em; }
+.penegak-pa .info .role { color: var(--primary-gold); }
+.penegak-pi .info .role { color: var(--primary-red); }
+.tag { padding: 5px 10px; border-radius: 20px; font-size: 0.75em; font-weight: 500; white-space: nowrap; color: #fff; }
+.tag-neutral { background-color: var(--neutral-gray); }
+.tag-pa { background-color: var(--primary-gold); }
+.tag-pi { background-color: var(--primary-red); }
+.tag-tamu { background-color: #FBBF24; color: #424242; }
+
+/* Gaya Animasi Api untuk Bantara (DIPERBARUI) */
+.tag-bantara {
+    background: linear-gradient(270deg, #ffcc33, #ff6600, #cc3300);
+    color: #fff;
+    font-weight: 600;
+    background-size: 200% 200%;
+    animation: fire-animation 3s ease-in-out infinite;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+
+/* ===== MODALS (Welcome, Detail, Image) ===== */
+.welcome-modal, .modal, .image-modal {
+    position: fixed; left: 0; top: 0; width: 100%; height: 100%;
+    display: none; justify-content: center; align-items: center;
+    transition: opacity 0.5s ease; opacity: 0;
+}
+.welcome-modal { z-index: 3000; background-color: rgba(0, 0, 0, 0.5); backdrop-filter: blur(8px); }
+.modal { z-index: 2000; background-color: rgba(0,0,0,0.6); }
+.image-modal { z-index: 4000; background-color: rgba(0,0,0,0.85); }
+.welcome-modal.show, .modal.show, .image-modal.show { opacity: 1; }
+
+.welcome-modal-content, .modal-content {
+    background: #fff; padding: 30px; border-radius: 20px; text-align: center;
+    width: 90%; max-width: 500px; box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    transform: scale(0.9); opacity: 0;
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.4s ease;
+}
+.welcome-modal.show .welcome-modal-content, .modal.show .modal-content { transform: scale(1); opacity: 1; }
+.modal-content { padding: 25px; max-width: 400px; }
+
+#closeWelcomeBtn {
+    background-image: linear-gradient(to right, var(--primary-gold) 0%, var(--primary-red) 51%, var(--primary-gold) 100%);
+    color: white; border: none; padding: 12px 30px; border-radius: 50px; font-size: 1em;
+    font-weight: 600; cursor: pointer; transition: 0.5s; background-size: 200% auto; margin-top: 20px;
+}
+#closeWelcomeBtn:hover { background-position: right center; transform: scale(1.05) translateY(0) !important; }
+.close-button { color: #aaa; position: absolute; top: 10px; right: 20px; font-size: 28px; font-weight: bold; cursor: pointer; }
+#modalImg { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 5px solid; cursor: pointer; transition: transform 0.3s ease; margin-bottom: 20px;}
+#modalImg:hover { transform: scale(1.05); }
+#modalNama { font-size: 1.5em; }
+
+.image-modal-content { max-width: 80%; max-height: 80%; animation: zoomIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+@keyframes zoomIn { from {transform: scale(0.8)} to {transform: scale(1)} }
+.close-image-button { position: absolute; top: 20px; right: 35px; color: #fff; font-size: 40px; font-weight: bold; cursor: pointer; transition: 0.3s; }
+.close-image-button:hover { color: #bbb; }
+
+/* ===== POP-UP PETUNJUK ===== */
+.menu-hint-popup {
+    position: fixed; top: 25px; left: 70px; max-width: 220px; z-index: 2100;
+    background-image: linear-gradient(to right, var(--primary-gold), var(--primary-red));
+    color: #fff; padding: 10px 15px; border-radius: 8px; font-size: 0.9em;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2); opacity: 0; transform: translateX(-20px) scale(0.95);
+    transition: opacity 0.4s ease, transform 0.4s ease; pointer-events: none;
+}
+.menu-hint-popup.show { opacity: 1; transform: translateX(0) scale(1); }
+.menu-hint-popup::before {
+    content: ''; position: absolute; top: 50%; right: 100%; margin-top: -8px; border-width: 8px;
+    border-style: solid; border-color: transparent var(--primary-gold) transparent transparent;
+}
+
+/* ===== FOOTER ===== */
+footer { text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(0,0,0,0.1); animation: fadeIn 1s 1s backwards; }
+footer p { color: #888; font-size: 0.9em; font-weight: 500; }
+
+/*
+==============================================
+TAMPILAN DESKTOP (LEBIH DARI 768px)
+==============================================
+*/
+@media (min-width: 769px) {
+    .container { padding: 40px; }
+
+    /* Header */
+    header { margin-top: 0; }
+    .scout-logo-header { width: 100px; margin-bottom: 20px; }
+    header h1 { font-size: 2.8em; }
+    header h2 { font-size: 1.6em; }
+
+    /* Visi & Misi menjadi 2 kolom */
+    .vision-mission { display: flex; text-align: left; gap: 40px; align-items: flex-start; }
+    .vision, .mission { flex: 1; }
+    .vision-mission .mission { margin-top: 0; }
+    .vision p { text-align: left; }
+    .vision h3, .mission h3 { display: block; }
+    
+    /* Pimpinan & Pembina */
+    .leadership h3 { font-size: 1.8em; }
+
+    /* Main Content menjadi 2 kolom */
+    .main-content {
+        display: flex; flex-direction: row; justify-content: space-between;
+        align-items: flex-start; gap: 40px;
+    }
+    .penegak { flex: 1; }
+    .penegak h3 { font-size: 1.8em; }
+
+    /* Animasi scroll dari samping untuk desktop */
+    .penegak-pa .member-card { transform: translateX(-50px); }
+    .penegak-pi .member-card { transform: translateX(50px); }
+    .card { transform: translateY(50px); }
+}
