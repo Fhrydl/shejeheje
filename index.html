@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Struktur Organisasi Pramuka SMAN 1 Samudera</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="preloader">
+        <img src="images/logo-pramuka.png" alt="Loading..." class="preloader-logo">
+    </div>
+
+    <div id="menu-toggle" class="menu-toggle">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+    
+    <audio id="background-music" src="audio/musik-pramuka.mp3" loop></audio>
+
+    <div id="menu-hint-popup" class="menu-hint-popup">
+        <p>Klik di sini untuk membuka menu navigasi!</p>
+    </div>
+
+    <nav id="nav-menu" class="nav-menu">
+        <ul>
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="galeri.html">Galeri</a></li>
+        </ul>
+    </nav>
+    <div id="welcomeModal" class="welcome-modal">
+        <div class="welcome-modal-content">
+            <h2>Halo, Selamat Datang!</h2>
+            <p>Ini adalah halaman struktur organisasi Pramuka SMAN 1 Samudera. Klik kartu anggota untuk melihat detail lebih lanjut.</p>
+            <button id="closeWelcomeBtn">Jelajahi Sekarang</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <header>
+            <img src="images/logo-pramuka.png" alt="Logo Pramuka" class="scout-logo-header"> <div class="header-title">
+                <h1>Struktur Organisasi</h1>
+                <h2>Pramuka SMAN 1 Samudera</h2>
+            </div>
+        </header>
+        
+        <section class="vision-mission visible">
+            <div class="vision">
+                <h3>Visi</h3>
+                <p>"Mewujudkan anggota Pramuka yang berkarakter, mandiri, dan peduli terhadap sesama serta lingkungan."</p>
+            </div>
+            <div class="mission">
+                <h3>Misi</h3>
+                <ul>
+                    <li>Mengembangkan latihan kepramukaan yang modern, inovatif, dan relevan dengan kebutuhan generasi muda.</li>
+                    <li>Membentuk pribadi yang beriman, bertakwa, berakhlak mulia, dan berbudi pekerti luhur.</li>
+                    <li>Meningkatkan keterampilan, kecakapan, dan pengetahuan anggota melalui kegiatan yang menantang.</li>
+                    <li>Menumbuhkan semangat pengabdian kepada masyarakat dan kepedulian terhadap kelestarian lingkungan hidup.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="leadership">
+            <h3>Pimpinan & Pembina Gugus Depan</h3>
+            <div class="card-container">
+                <div class="card clickable card-neutral" data-sangga="PA / PI" data-nama="Drs. Zulkiram, M.S.M" data-jabatan="KEPALA SEKOLAH" data-tingkatan="-" data-img="images/zulkiram.jpg">
+                    <img src="images/zulkiram.jpg" alt="Foto Drs. Zulkiram, M.S.M">
+                    <h4>Drs. Zulkiram, M.S.M</h4>
+                    <p class="role">KEPALA SEKOLAH</p>
+                    <span class="tag tag-neutral">PA / PI</span>
+                </div>
+                <div class="card clickable card-pa" data-sangga="PA" data-nama="Zulfikri" data-jabatan="PEMBINA" data-tingkatan="-" data-img="images/zulfikri.jpg">
+                    <img src="images/zulfikri.jpg" alt="Foto Zulfikri">
+                    <h4>Zulfikri</h4>
+                    <p class="role">PEMBINA</p>
+                    <span class="tag tag-pa">PA</span>
+                </div>
+                <div class="card clickable card-pi" data-sangga="PI" data-nama="Alya Mauliza" data-jabatan="PEMBINA" data-tingkatan="-" data-img="images/alya_mauliza.jpg">
+                    <img src="images/alya_mauliza.jpg" alt="Foto Alya Mauliza">
+                    <h4>Alya Mauliza</h4>
+                    <p class="role">PEMBINA</p>
+                    <span class="tag tag-pi">PI</span>
+                </div>
+                <div class="card clickable card-neutral" data-sangga="PA / PI" data-nama="-" data-jabatan="PELATIH" data-tingkatan="-" data-img="images/pelatih.jpg">
+                    <img src="images/pelatih.jpg" alt="Foto Pelatih">
+                    <h4>-</h4>
+                    <p class="role">PELATIH</p>
+                    <span class="tag tag-neutral">PA / PI</span>
+                </div>
+            </div>
+        </section>
+
+        <main class="main-content">
+            <section class="penegak penegak-pa">
+                <h3>Penegak Putra (PA)</h3>
+                <div class="member-list">
+                    <h4 class="sub-heading">Aparat Sangga</h4>
+                    <div class="member-card clickable" data-sangga="PA" data-nama="M. ANDRYAN" data-jabatan="PINSA" data-tingkatan="TAMU PENEGAK" data-img="images/m_andryan.jpg">
+                        <img src="images/m_andryan.jpg" alt="Foto M. ANDRYAN">
+                        <div class="info"><h4>M. ANDRYAN</h4><p class="role">PINSA</p></div>
+                        <span class="tag tag-tamu">TAMU PENEGAK</span>
+                    </div>
+                    <div class="member-card clickable" data-sangga="PA" data-nama="FAHRI YADIL" data-jabatan="WAPIN" data-tingkatan="BANTARA" data-img="images/fahri_yadil.jpg">
+                        <img src="images/fahri_yadil.jpg" alt="Foto FAHRI YADIL">
+                        <div class="info"><h4>FAHRI YADIL</h4><p class="role">WAPIN</p></div>
+                        <span class="tag tag-bantara">BANTARA</span>
+                    </div>
+                    <div class="member-card clickable" data-sangga="PA" data-nama="SULTAN AZRIL ALFATA" data-jabatan="SEKETARIS" data-tingkatan="TAMU PENEGAK" data-img="images/sultan_azril.jpg">
+                        <img src="images/sultan_azril.jpg" alt="Foto SULTAN AZRIL ALFATA">
+                        <div class="info"><h4>SULTAN AZRIL ALFATA</h4><p class="role">SEKETARIS</p></div>
+                        <span class="tag tag-tamu">TAMU PENEGAK</span>
+                    </div>
+                    <div class="member-card clickable" data-sangga="PA" data-nama="M. FIQRI SYAHPUTRA" data-jabatan="BENDAHARA" data-tingkatan="TAMU PENEGAK" data-img="images/m_fiqri.jpg">
+                        <img src="images/m_fiqri.jpg" alt="Foto M. FIQRI SYAHPUTRA">
+                        <div class="info"><h4>M. FIQRI SYAHPUTRA</h4><p class="role">BENDAHARA</p></div>
+                        <span class="tag tag-tamu">TAMU PENEGAK</span>
+                    </div>
+                    
+                    <h4 class="sub-heading">Anggota</h4>
+                    <div class="member-card clickable" data-sangga="PA" data-nama="ALIF FAJAR RAMADHAN" data-jabatan="ANGGOTA" data-tingkatan="TAMU PENEGAK" data-img="images/alif_fajar.jpg">
+                        <img src="images/alif_fajar.jpg" alt="Foto ALIF FAJAR RAMADHAN">
+                        <div class="info"><h4>ALIF FAJAR RAMADHAN</h4><p class="role">ANGGOTA</p></div>
+                        <span class="tag tag-tamu">TAMU PENEGAK</span>
+                    </div>
+                    <div class="member-card clickable" data-sangga="PA" data-nama="M. IKRAM" data-jabatan="ANGGOTA" data-tingkatan="TAMU PENEGAK" data-img="images/m_ikram.jpg">
+                        <img src="images/m_ikram.jpg" alt="Foto M. IKRAM">
+                        <div class="info"><h4>M. IKRAM</h4><p class="role">ANGGOTA</p></div>
+                        <span class="tag tag-tamu">TAMU PENEGAK</span>
+                    </div>
+                    <div class="member-card clickable" data-sangga="PA" data-nama="M. IMAMUL KHAIRAN" data-jabatan="ANGGOTA" data-tingkatan="TAMU PENEGAK" data-img="images/m_imamul_khairan.jpg">
+                        <img src="images/m_imamul_khairan.jpg" alt="Foto M. IMAMUL KHAIRAN">
+                        <div class="info"><h4>M. IMAMUL KHAIRAN</h4><p class="role">ANGGOTA</p></div>
+                        <span class="tag tag-tamu">TAMU PENEGAK</span>
+                    </div>
+                    <div class="member-card clickable" data-sangga="PA" data-nama="M. KHAIS" data-jabatan="ANGGOTA" data-tingkatan="TAMU PENEGAK" data-img="images/m_khais.jpg">
+                        <img src="images/m_khais.jpg" alt="Foto M. KHAIS">
+                        <div class="info"><h4>M. KHAIS</h4><p class="role">ANGGOTA</p></div>
+                        <span class="tag tag-tamu">TAMU PENEGAK</span>
+                    </div>
+                    <div class="member-card clickable" data-sangga="PA" data-nama="M. RIDHO" data-jabatan="ANGGOTA" data-tingkatan="TAMU PENEGAK" data-img="images/m_ridho.jpg">
+                        <img src="images/m_ridho.jpg" alt="Foto M. RIDHO">
+                        <div class="info"><h4>M. RIDHO</h4><p class="role">ANGGOTA</p></div>
+                        <span class="tag tag-tamu">TAMU PENEGAK</span>
+                    </div>
+                    <div class="member-card clickable" data-sangga="PA" data-nama="M. RIYALDI" data-jabatan="ANGGOTA" data-tingkatan="TAMU PENEGAK" data-img="images/m_riyaldi.jpg">
+                        <img src="images/m_riyaldi.jpg" alt="Foto M. RIYALDI">
+                        <div class="info"><h4>M. RIYALDI</h4><p class="role">ANGGOTA</p></div>
+                        <span class="tag tag-tamu">TAMU PENEGAK</span>
+                    </div>
+                    <div class="member-card clickable" data-sangga="PA" data-nama="TM. ZALDY" data-jabatan="ANGGOTA" data-tingkatan="TAMU PENEGAK" data-img="images/tm_zaldy.jpg">
+                        <img src="images/tm_zaldy.jpg" alt="Foto TM. ZALDY">
+                        <div class="info"><h4>TM. ZALDY</h4><p class="role">ANGGOTA</p></div>
+                        <span class="tag tag-tamu">TAMU PENEGAK</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="penegak penegak-pi">
+                <h3>Penegak Putri (PI)</h3>
+                <div class="member-list">
+                    <h4 class="sub-heading">Aparat Sangga</h4>
+                    <div class="member-card clickable" data-sangga="PI" data-nama="NAILA FIKRA ASKIA" data-jabatan="PINSA" data-tingkatan="BANTARA" data-img="images/naila_fikra.jpg">
+                        <img src="images/naila_fikra.jpg" alt="Foto NAILA FIKRA ASKIA">
+                        <div class="info"><h4>NAILA FIKRA ASKIA</h4><p class="role">PINSA</p></div>
+                        <span class="tag tag-bantara">BANTARA</span>
+                    </div>
+                    <div class="member-card clickable" data-sangga="PI" data-nama="DEBY JULIANI" data-jabatan="WAPIN" data-tingkatan="TAMU PENEGAK" data-img="images/deby_juliani.jpg">
+                        <img src="images/deby_juliani.jpg" alt="Foto DEBY JULIANI">
+                        <div class="info"><h4>DEBY JULIANI</h4><p class="role">WAPIN</p></div>
+                        <span class="tag tag-tamu">TAMU PENEGAK</span>
+                    </div>
+                     <div class="member-card clickable" data-sangga="PI" data-nama="NURUL HAYATI" data-jabatan="SEKETARIS" data-tingkatan="TAMU PENEGAK" data-img="images/nurul_hayati.jpg">
+                        <img src="images/nurul_hayati.jpg" alt="Foto NURUL HAYATI">
+                        <div class="info"><h4>NURUL HAYATI</h4><p class="role">SEKETARIS</p></div>
+                        <span class="tag tag-tamu">TAMU PENEGAK</span>
+                    </div>
+                     <div class="member-card clickable" data-sangga="PI" data-nama="CUT SAFANA NAFISA" data-jabatan="BENDAHARA" data-tingkatan="TAMU PENEGAK" data-img="images/cut_safana_nafisa.jpg">
+                        <img src="images/cut_safana_nafisa.jpg" alt="Foto CUT SAFANA NAFISA">
+                        <div class="info"><h4>CUT SAFANA NAFISA</h4><p class="role">BENDAHARA</p></div>
+                        <span class="tag tag-tamu">TAMU PENEGAK</span>
+                    </div>
+
+                    <h4 class="sub-heading">Anggota</h4>
+                     <div class="member-card clickable" data-sangga="PI" data-nama="ALYA SALSABILA" data-jabatan="ANGGOTA" data-tingkatan="TAMU PENEGAK" data-img="images/alya_salsabila.jpg">
+                        <img src="images/alya_salsabila.jpg" alt="Foto ALYA SALSABILA">
+                        <div class="info"><h4>ALYA SALSABILA</h4><p class="role">ANGGOTA</p></div>
+                        <span class="tag tag-tamu">TAMU PENEGAK</span>
+                    </div>
+                     <div class="member-card clickable" data-sangga="PI" data-nama="ULFATUL JANNAH" data-jabatan="ANGGOTA" data-tingkatan="TAMU PENEGAK" data-img="images/ulfatul_jannah.jpg">
+                        <img src="images/ulfatul_jannah.jpg" alt="Foto ULFATUL JANNAH">
+                        <div class="info"><h4>ULFATUL JANNAH</h4><p class="role">ANGGOTA</p></div>
+                        <span class="tag tag-tamu">TAMU PENEGAK</span>
+                    </div>
+                     <div class="member-card clickable" data-sangga="PI" data-nama="NABILA" data-jabatan="ANGGOTA" data-tingkatan="TAMU PENEGAK" data-img="images/nabila.jpg">
+                        <img src="images/nabila.jpg" alt="Foto NABILA">
+                        <div class="info"><h4>NABILA</h4><p class="role">ANGGOTA</p></div>
+                        <span class="tag tag-tamu">TAMU PENEGAK</span>
+                    </div>
+                    <div class="member-card clickable" data-sangga="PI" data-nama="NASLI FITRIAH" data-jabatan="ANGGOTA" data-tingkatan="TAMU PENEGAK" data-img="images/nasli_fitriah.jpg">
+                        <img src="images/nasli_fitriah.jpg" alt="Foto NASLI FITRIAH">
+                        <div class="info"><h4>NASLI FITRIAH</h4><p class="role">ANGGOTA</p></div>
+                        <span class="tag tag-tamu">TAMU PENEGAK</span>
+                    </div>
+                    <div class="member-card clickable" data-sangga="PI" data-nama="NORA SATILLA" data-jabatan="ANGGOTA" data-tingkatan="TAMU PENEGAK" data-img="images/nora_satilla.jpg">
+                        <img src="images/nora_satilla.jpg" alt="Foto NORA SATILLA">
+                        <div class="info"><h4>NORA SATILLA</h4><p class="role">ANGGOTA</p></div>
+                        <span class="tag tag-tamu">TAMU PENEGAK</span>
+                    </div>
+                     <div class="member-card clickable" data-sangga="PI" data-nama="LINILMASTURI" data-jabatan="ANGGOTA" data-tingkatan="TAMU PENEGAK" data-img="images/linilmasturi.jpg">
+                        <img src="images/linilmasturi.jpg" alt="Foto LINILMASTURI">
+                        <div class="info"><h4>LINILMASTURI</h4><p class="role">ANGGOTA</p></div>
+                        <span class="tag tag-tamu">TAMU PENEGAK</span>
+                    </div>
+                    <div class="member-card clickable" data-sangga="PI" data-nama="NADIATUL TAHIRA" data-jabatan="ANGGOTA" data-tingkatan="TAMU PENEGAK" data-img="images/nadiatul_tahira.jpg">
+                        <img src="images/nadiatul_tahira.jpg" alt="Foto NADIATUL TAHIRA">
+                        <div class="info"><h4>NADIATUL TAHIRA</h4><p class="role">ANGGOTA</p></div>
+                        <span class="tag tag-tamu">TAMU PENEGAK</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Created by Fahriyadil</p>
+        </footer>
+
+    </div>
+
+    <div id="detailModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <img id="modalImg" src="" alt="Foto Detail">
+            <h2 id="modalNama"></h2>
+            <div class="modal-details">
+                <p><strong>Jabatan:</strong> <span id="modalJabatan"></span></p>
+                <p><strong>Sangga:</strong> <span id="modalSangga"></span></p>
+                <p><strong>Tingkatan:</strong> <span id="modalTingkatan"></span></p>
+            </div>
+        </div>
+    </div>
+
+    <div id="imageModal" class="image-modal">
+        <span class="close-image-button">&times;</span>
+        <img class="image-modal-content" id="modalImageFull">
+    </div>
+
+    <script src="script.js"></script>
+    <script src="music-player.js"></script>
+
+</body>
+</html>
